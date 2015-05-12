@@ -1,0 +1,15 @@
+.gas-monitor h3 {
+  font-size: 1.2em;
+}
+.gas-monitor h3, p {
+  margin-top: 0;
+}
+/* add additional custom styles */
+.gzr1{
+  background-color:#e84b4b;
+}
+.gzr2{
+  background-color:#ec7655;
+}
+
+

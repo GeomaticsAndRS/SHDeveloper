@@ -1,0 +1,41 @@
+{
+  "widgetName": "GasMonitor",
+  "queryConditions":{
+    "queryFields":{
+      "NAME":"NAME",
+      "ID":"ID",
+      "value":"value"
+    },
+    "returnGeometry":false,
+    "queryWhere":"NAME<>' '",
+    "queryTaskUrl":"http://localhost:6080/arcgis/rest/services/ESRI/HymnData201306051812/MapServer/27"
+  },
+  "nameofMonitor":"监测站点名称",
+  "currentValue":"当前检测值",
+  "gp":{
+    "queryFields":{
+      "NAME":"NAME",
+      "ID":"ID",
+      "value":"value"
+    },
+    "returnGeometry":true,
+    "queryWhere":"NAME<>' '",
+    "queryTaskUrl":"http://localhost:6080/arcgis/rest/services/ESRI/HymnData201306051812/MapServer/27",
+    "gpUrl":"http://localhost:6080/arcgis/rest/services/ESRI/HymnData20150314/GPServer/HymnIDW/"
+  },
+  "infoPeople":{
+    "title":"位置标号：${ID}",
+    "content":"<div>分站位置：${Location}</div><br/> <div>分站人数：${Number}</div>"
+  },
+  "people":{
+    "queryFields":{
+      "Location":"Location",
+      "ID":"ID",
+      "Number":"Number"
+    },
+    "returnGeometry":true,
+    "queryWhere":"Location<>' '",
+    "queryTaskUrl":"http://localhost:6080/arcgis/rest/services/ESRI/HymnData201306051812/MapServer/28"
+  }
+
+}

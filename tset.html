@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>GP Viewshed Task</title>
+
+    <!--<link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">-->
+    <style>
+        html, body, #mapDiv {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        #info {
+            bottom: 20px;
+            color: #444;
+            height: auto;
+            font-family: arial;
+            left: 20px;
+            margin: 5px;
+            padding: 10px;
+            position: absolute;
+            text-align: left;
+            width: 200px;
+            z-index: 40;
+        }
+    </style>
+<link href="http://localhost/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/dijit/themes/tundra/tundra.css">
+    <link href="http://localhost/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/dojo/resources/dojo.css">
+    <!--<script src="http://localhost/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/dojo/dojo.js"></script>-->
+    <script src="http://localhost/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/init.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost/arcgis_js_v38_sdk/arcgis_js_api/library/3.8/3.8/js/dojo/dijit/themes/tundra/tundra.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost/arcgis_js_v38_sdk/arcgis_js_api/library/3.8/3.8/js/esri/css/esri.css" />-->
+    <!--&lt;!&ndash;<script src="JavaScript/jsapi_vsdoc12_v38.js"></script>&ndash;&gt;-->
+    <!--<script type="text/javascript">djConfig = { isDebug: true };</script>-->
+    <!--<script type="text/Javascript" src="http://localhost/arcgis_js_v38_sdk/arcgis_js_api/library/3.8/3.8/init.js"></script>-->
+
+    <script>
+
+        require(["dojo/dom",
+                    "dojo/_base/array",
+                    "esri/Color",
+
+                    "esri/map",
+                        "esri/layers/ArcGISDynamicMapServiceLayer",
+                        "esri/tasks/query",
+                        "esri/tasks/QueryTask",
+                        "esri/geometry/Extent",
+                    'esri/geometry/Point',
+                    'esri/SpatialReference',
+                    'esri/geometry/Geometry',
+                    "esri/graphic",
+                    "esri/graphicsUtils",
+                    "esri/tasks/Geoprocessor",
+                    "esri/tasks/FeatureSet",
+                    "esri/tasks/LinearUnit",
+                    "esri/symbols/SimpleMarkerSymbol",
+                    "esri/symbols/SimpleLineSymbol",
+                    "esri/symbols/SimpleFillSymbol"
+                ],
+                function(dom, array, Color, Map, ArcGISDynamicMapServiceLayer,
+                         Query,QueryTask,Extent,Point,SpatialReference,Geometry,Graphic, graphicsUtils, Geoprocessor, FeatureSet, LinearUnit, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol){
+
+                    var map, gp, originalPoints,nowPoints,params,featureSetofOwn;
+                    var extent=new Extent(3.7423440522057734E7,4297316.705212872,3.743824398916467E7,4301153.1712191375,new SpatialReference(2413));
+
+                    /*Initialize map, GP*/
+                    map=new Map("mapDiv");
+                    var dyLayer=new ArcGISDynamicMapServiceLayer("http://localhost:6080/arcgis/rest/services/ESRI/HymnData201306051812/MapServer");
+                    map.addLayer(dyLayer);
+                    map.setExtent(extent);
+                    queryFeatureSet();
+
+                    //doGP();
+                    function queryFeatureSet(){
+//                        //var that=this;
+                        var query = new Query();
+                        query.outFields = ["*"];
+                        query.outSpatialReference = new SpatialReference(2413);
+                        query.returnGeometry = true;
+                        query.where = "NAME<>' '";
+                        var queryTask = new QueryTask("http://localhost:6080/arcgis/rest/services/ESRI/HymnData201306051812/MapServer/27");
+                        /*queryTask.execute(query,function pressResult(featureSet){
+                            originalPoints = [];
+
+                            array.forEach(featureSet.features, function (feature) {
+                                originalPoints.push(feature);
+                                //处理
+                                nowPoints=[];
+                                array.forEach(originalPoints, function (point) {
+                                    var gra = new Graphic();
+                                    gra.setAttributes({
+                                        "OBJECTID":point.attributes.OBJECTID,
+                                        "ID":point.attributes.ID,
+                                        "value":point.attributes.value += 5 * (Math.random().toFixed(2)),
+                                        "NAME":point.attributes.NAME
+                                    });
+                                    //gra.attributes["spatialReference"] = point.geometry.spatialReference.wkid;
+                                    var geometry=new Geometry();
+                                    geometry.spatialReference= map.spatialReference;
+                                    geometry.type = "point";
+                                    geometry.x = point.geometry.x;
+                                    geometry.y = point.geometry.y;
+                                    gra.setGeometry(geometry);
+                                    nowPoints.push(gra);
+                                });
+                                featureSetofOwn = new FeatureSet(nowPoints);
+                                *//*featureSet.features = ;*//*
+                                featureSetofOwn.geometryType='point';
+                                featureSetofOwn.spatialReference =map.spatialReference;
+                            });
+                            console.log("originalPoints的值："+originalPoints);
+                            doGP();
+                        },function(error){
+                            alert(error);
+                        });
+                    }*/
+
+                    }
+                    //构造param  do
+                    function doGP(){
+                        gp = new Geoprocessor("http://localhost:6080/arcgis/rest/services/ESRI/HymnData20150314/GPServer/HymnIDW");
+
+                        params = {"point": featureSetofOwn};
+                        console.log(featureSetofOwn);
+                        //同步execute
+                        gp.execute(params);
+                        gp.on("execute-complete",function(){
+                            alert("good");
+                        });
+                        gp.on("error",function(err){
+                            alert("gp错误"+erro);
+                        })
+                    }
+
+
+                });
+
+
+    </script>
+
+</head>
+<body>
+<div id="mapDiv"></div>
+<div id="info" class="esriSimpleSlider">
+    Click on map to execute ViewShed GP Task.
+</div>
+</body>
+</html>

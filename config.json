@@ -1,0 +1,285 @@
+{
+  "theme": {
+    "name": "TabTheme",
+    "styles": [
+      "red",
+      "default",
+      "simpleblue",
+      "purple"
+    ],
+    "version": "1.1"
+  },
+  "portalUrl": "http://www.arcgisonline.cn/portal",
+  "title": "SHDeveloper",
+  "subtitle": "with Web AppBuilder for ArcGIS",
+  "logo": "images/app-logo.png",
+  "geometryService": "http://tools.arcgisonline.cn/arcgis/rest/services/Utilities/Geometry/GeometryServer",
+  "links": [],
+  "widgetOnScreen": {
+    "widgets": [
+      {
+        "uri": "themes/TabTheme/widgets/Header/Widget",
+        "positionRelativeTo": "browser",
+        "position": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "height": 44
+        },
+        "version": "1.1",
+        "id": "themes/TabTheme/widgets/Header/Widget_15",
+        "name": "Header",
+        "label": "页眉"
+      },
+      {
+        "uri": "themes/TabTheme/widgets/Footer/Widget",
+        "positionRelativeTo": "browser",
+        "position": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "height": 24
+        },
+        "version": "1.1",
+        "id": "themes/TabTheme/widgets/Footer/Widget_16",
+        "name": "Footer",
+        "label": "页脚"
+      },
+      {
+        "uri": "themes/TabTheme/widgets/SidebarController/Widget",
+        "positionRelativeTo": "browser",
+        "position": {
+          "left": 0,
+          "top": 44,
+          "bottom": 24
+        },
+        "version": "1.1",
+        "id": "themes/TabTheme/widgets/SidebarController/Widget_17",
+        "name": "SidebarController",
+        "label": "侧边栏控制器"
+      },
+      {
+        "uri": "widgets/HomeButton/Widget",
+        "position": {
+          "left": 7,
+          "top": 75
+        },
+        "version": "1.1",
+        "id": "widgets/HomeButton/Widget_18",
+        "positionRelativeTo": "map",
+        "name": "HomeButton",
+        "label": "主目录按钮"
+      },
+      {
+        "uri": "widgets/Scalebar/Widget",
+        "position": {
+          "left": 10,
+          "bottom": 10
+        },
+        "version": "1.1",
+        "id": "widgets/Scalebar/Widget_19",
+        "positionRelativeTo": "map",
+        "name": "Scalebar",
+        "label": "比例尺"
+      },
+      {
+        "uri": "widgets/Geocoder/Widget",
+        "position": {
+          "left": 45,
+          "top": 5
+        },
+        "version": "1.1",
+        "id": "widgets/Geocoder/Widget_20",
+        "positionRelativeTo": "map",
+        "name": "Geocoder",
+        "label": "地理编码器"
+      },
+      {
+        "uri": "widgets/Coordinate/Widget",
+        "position": {
+          "left": 160,
+          "bottom": 5
+        },
+        "version": "1.1",
+        "id": "widgets/Coordinate/Widget_21",
+        "positionRelativeTo": "map",
+        "name": "Coordinate",
+        "label": "坐标"
+      },
+      {
+        "position": {
+          "right": 110,
+          "top": 10,
+          "width": 400,
+          "height": 410
+        },
+        "placeholderIndex": 1,
+        "id": "_22",
+        "positionRelativeTo": "map"
+      },
+      {
+        "position": {
+          "right": 60,
+          "top": 10,
+          "width": 380,
+          "height": 410
+        },
+        "placeholderIndex": 2,
+        "id": "_23",
+        "positionRelativeTo": "map"
+      },
+      {
+        "position": {
+          "right": 10,
+          "top": 10,
+          "width": 380,
+          "height": 410
+        },
+        "placeholderIndex": 3,
+        "id": "_24",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/OverviewMap/Widget",
+        "position": {
+          "right": 0,
+          "bottom": 0
+        },
+        "version": "1.1",
+        "id": "widgets/OverviewMap/Widget_25",
+        "positionRelativeTo": "map",
+        "name": "OverviewMap",
+        "label": "总览图"
+      },
+      {
+        "uri": "widgets/MyLocation/Widget",
+        "position": {
+          "left": 7,
+          "top": 110
+        },
+        "version": "1.1",
+        "id": "widgets/MyLocation/Widget_26",
+        "positionRelativeTo": "map",
+        "name": "MyLocation",
+        "label": "我的位置"
+      },
+      {
+        "uri": "widgets/AttributeTable/Widget",
+        "positionRelativeTo": "browser",
+        "position": {"bottom": 24},
+        "version": "1.1",
+        "id": "widgets/AttributeTable/Widget_27",
+        "name": "AttributeTable",
+        "label": "属性表"
+      },
+      {
+        "uri": "widgets/Splash/Widget",
+        "visible": false,
+        "positionRelativeTo": "browser",
+        "version": "1.1",
+        "id": "widgets/Splash/Widget_28",
+        "position": {
+          "left": 0,
+          "top": 0
+        },
+        "name": "Splash",
+        "label": "启动"
+      }
+    ],
+    "panel": {
+      "uri": "jimu/PreloadWidgetIconPanel",
+      "positionRelativeTo": "map"
+    }
+  },
+  "map": {
+    "3D": false,
+    "2D": true,
+    "position": {
+      "top": 44,
+      "right": 0,
+      "bottom": 24,
+      "left": 55
+    },
+    "itemId": "6675f5cc08df404a9ec03e0326d1e019",
+    "mapOptions": {
+      "extent": {
+        "xmin": 37421878.1911345,
+        "ymin": 4293077.636951333,
+        "xmax": 37437751.24038358,
+        "ymax": 4302974.335056139,
+        "spatialReference": {
+          "wkid": 2413,
+          "latestWkid": 2413
+        }
+      }
+    },
+    "id": "map",
+    "portalUrl": "http://www.arcgisonline.cn/portal"
+  },
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/TabTheme/panels/TabPanel/Panel",
+      "positionRelativeTo": "browser",
+      "position": {
+        "top": 44,
+        "left": 0,
+        "bottom": 22
+      }
+    },
+    "widgets": [
+      {
+        "uri": "widgets/Legend/Widget",
+        "version": "1.1",
+        "id": "widgets/Legend/Widget_13",
+        "index": 2,
+        "name": "Legend",
+        "label": "图例"
+      },
+      {
+        "uri": "widgets/LayerList/Widget",
+        "version": "1.1",
+        "id": "widgets/LayerList/Widget_14",
+        "index": 3,
+        "name": "LayerList",
+        "label": "图层列表"
+      },
+      {
+        "name": "Locator",
+        "label": "人员定位",
+        "version": "0.0.1",
+        "IsController": false,
+        "uri": "widgets/Locator/Widget",
+        "index": 4,
+        "id": "widgets/Locator/Widget_29"
+      },
+      {
+        "name": "Videos",
+        "label": "监控视频",
+        "version": "0.0.1",
+        "IsController": false,
+        "uri": "widgets/Videos/Widget",
+        "index": 5,
+        "id": "widgets/Videos/Widget_30"
+      },
+      {
+        "name": "GasMonitor",
+        "label": "瓦斯监控",
+        "version": "0.0.1",
+        "IsController": false,
+        "uri": "widgets/GasMonitor/Widget",
+        "index": 7,
+        "id": "widgets/GasMonitor/Widget_31"
+      }
+    ],
+    "groups": []
+  },
+  "wabVersion": "1.1",
+  "isWebTier": false,
+  "httpProxy": {
+    "useProxy": true,
+    "alwaysUseProxy": false,
+    "url": "",
+    "rules": []
+  },
+  "appId": ""
+}

@@ -1,0 +1,8 @@
+{
+  "widgetName": "Locator",
+  "queryTaskUrl":"http://localhost:6080/arcgis/rest/services/ESRI/HymnData201306051812/MapServer/28",
+  "queryFields":"*",
+  "returnGeometry":false,
+  "queryWhere":"Location<>' '",
+  "queryPersonWhere":"Location = '"
+}

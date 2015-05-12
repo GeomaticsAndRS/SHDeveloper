@@ -1,0 +1,21 @@
+{
+  "widgetName":"Videos",
+  "videos":{
+    "height":"320",
+    "width":"290",
+    "controls":"controls",
+    "autoplay":"autoplay",
+    "srcPre":"./widgets/Videos/videos/煤矿井下视频"
+  },
+  "queryConditions":{
+    "queryTaskUrl":"http://localhost:6080/arcgis/rest/services/ESRI/HymnData201306051812/MapServer/26",
+    "queryFields":{
+      "NAME":"NAME",
+      "ID":"ID",
+      "FW":"FW"
+    },
+    "returnGeometry":true,
+    "queryWhere":"NAME <> ' '",
+    "queryExtentWhere":"NAME='视频"
+  }
+}
